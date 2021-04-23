@@ -11,13 +11,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landingpad
       objectReference: {fileID: 0}
+    - target: {fileID: 2326008758631142482, guid: 6dec672742f173243a138100a61b2640, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 2470203065182659271, guid: 6dec672742f173243a138100a61b2640, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2470203065182659271, guid: 6dec672742f173243a138100a61b2640, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.5
+      value: -20.02
       objectReference: {fileID: 0}
     - target: {fileID: 2470203065182659271, guid: 6dec672742f173243a138100a61b2640, type: 3}
       propertyPath: m_LocalPosition.y
