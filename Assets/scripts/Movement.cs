@@ -33,16 +33,18 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            NewMethod();
+            ApplyRotation(rotationThrust);
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(Vector3.forward * rotationThrust * Time.deltaTime);
+            ApplyRotation(-rotationThrust);
         }
     }
 
-    private void NewMethod()
+    private void ApplyRotation(float rotationThisFrame)
     {
-        transform.Rotate(-Vector3.forward * rotationThrust * Time.deltaTime);
+        rb.freezeRotation = true; //freezing rotation so we can manually rotate
+        transform.Rotate(-Vector3.forward * rotationThisFrame * Time.deltaTime);
+        rb.freezeRotation = false; //unfreezing rotation so the physics can take over
     }
 }
