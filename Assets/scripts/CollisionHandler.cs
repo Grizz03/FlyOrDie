@@ -31,11 +31,11 @@ public class CollisionHandler : MonoBehaviour
 
     void RespondToDebug()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             LoadNextLevel();
         }
-        else if(Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown(KeyCode.C))
         {
             collisionDisabled = !collisionDisabled; //toggle collision
         }
