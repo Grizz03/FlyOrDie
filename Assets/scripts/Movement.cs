@@ -10,6 +10,10 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     AudioSource audioSource;
 
+    [SerializeField] ParticleSystem mainEngineParticles;
+    [SerializeField] ParticleSystem leftThrusterparticles;
+    [SerializeField] ParticleSystem rightThrusterparticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +37,15 @@ public class Movement : MonoBehaviour
             {
                 audioSource.PlayOneShot(mainEngine);
             }
+            if (!mainEngineParticles.isPlaying)
+            {
+                mainEngineParticles.Play();
+            }
         }
         else
         {
             audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
 
@@ -45,10 +54,23 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             ApplyRotation(rotationThrust);
+            if (!leftThrusterparticles.isPlaying)
+            {
+                leftThrusterparticles.Play();
+            }
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             ApplyRotation(-rotationThrust);
+            if (!rightThrusterparticles.isPlaying)
+            {
+                rightThrusterparticles.Play();
+            }
+        }
+        else
+        {
+            leftThrusterparticles.Stop();
+            rightThrusterparticles.Stop();
         }
     }
 
